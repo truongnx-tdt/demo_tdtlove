@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDT DEV - Gửi tặng người anh yêu</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TDT DEV - Sáng tạo những món quà ý nghĩa và độc đáo cho người thương yêu.">
+    <meta name="keywords" content="TDT DEV, quà tặng, món quà ý nghĩa, tình yêu, sáng tạo">
+    <meta name="author" content="TDT DEV">
+    <meta name="robots" content="index, follow">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./icon/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        html {
+            background-color: oklch(1 0 0);
+        }
+
+        html.dark {
+            background-color: oklch(0.145 0 0);
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #app {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: oklch(1 0 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        #loading.dark {
+            background: oklch(0.145 0 0);
+        }
+
+        #loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            color: #EE66A6;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #EE66A6;
+            text-align: center;
+            font-size: 16px;
+            opacity: 0.8;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+
+        #instructions.hidden {
+            opacity: 0;
+        }
+
+        .glowing-text {
+            color: white;
+            font-family: "Pacifico", cursive;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 15px rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="loading-text">Loading...</div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        // Handle loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Handle dark mode
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('loading').classList.add('dark');
+        }
+    </script>
+</body>
+
+</html>
