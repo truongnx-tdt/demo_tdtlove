@@ -19,7 +19,9 @@ npm install
 2. Place required assets:
 - Put `Mali.ttf` in `public/font/`
 - Put your music file in `public/storage/musics/`
-- Put `heart.obj` in the root directory
+- Put `heart.obj` in the root directory<br/>
+<br/> Affter Replace music or icon, you can modify text<br/>
+- Replace your text at this.messages=["Xuân Trường","TDT DEV LOVE","Em xinh gái ơi","Anh yêu em","Dev love","TDT DEV"]
 
 3. Start development server:
 ```bash
