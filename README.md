@@ -1,4 +1,4 @@
-# HarumiGiftsBox
+# TDT Dev love
 
 A beautiful 3D gift box with particle effects built using Three.js and Vite.
 
