@@ -34,7 +34,7 @@ npm run build
 ## Project Structure
 
 ```
-HarumiGiftsBox/
+TDTDevLove/
 ├── src/
 │   └── main.js
 ├── public/
